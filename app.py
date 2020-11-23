@@ -12,8 +12,8 @@ def encrypt():
     """
     Shows text in encrypted view
     """
-    string = request.args.get("string", 'None')
-    if string == 'None':
+    string = request.args.get("string")
+    if not string:
         name = ''
         token = "Произошли технические шоколадки, не обнаружена строка."
     else:
@@ -28,8 +28,8 @@ def decrypt():
     """
     Shows text in decrypted view
     """
-    token = request.args.get("string", 'None')
-    if token == 'None':
+    token = request.args.get("string")
+    if not token:
         name = ''
         string = "Произошли технические шоколадки, не обнаружена строка."
     else:
